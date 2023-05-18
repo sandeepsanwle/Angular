@@ -1,0 +1,75 @@
+Topics of Angular
+
+     angular cli commands
+     modules working
+
+forms in angular:-
+
+    template driven form 
+    reactive form
+    
+
+creating services
+service use
+
+Directives:-
+
+     ngif,ngfor,nested etc.
+     style binding
+
+
+angular routing:-
+
+     static or child routing
+     api call get data from api
+     post data to api
+
+
+Router :- 
+   -> Redirecting Routes
+   -> Wildcard Routed
+   -> Lazy-Loading
+   
+Http methods 
+  
+   -> get request
+   -> post request
+   -> put request
+   -> delete request
+   
+   
+   
+Body-parser -> For parsing middleware :- 
+
+Imagine you're filling out a form on a website. When you submit the form, the data you entered is packaged and sent to the server. The server needs a way to understand and use that data. body-parser acts as a translator that takes the data from the request body and presents it to the server in a format it can easily work with.
+
+By using body-parser in your Express.js application, you don't have to worry about manually parsing the request body. It automatically takes care of that process for you. You can then access the data sent by the client in the req.body object in your server code, and perform any necessary operations or save it to a database.
+
+In summary, body-parser simplifies the process of extracting data from the body of an HTTP request in Express.js, making it easier for you to handle and use that data in your server-side code.
+
+
+
+
+
+
+
+EOD:-      
+
+Angular:- 
+ 
+-> Understanding Operators of Rxjs
+-> Cross components communication with services
+   -> Using Eventemitter
+   -> Using Subjects
+
+Nodejs:-
+   
+-> Body-parser -> For parsing middleware 
+-> PDFkit -> For pdf generation     
+-> Moment -> For date and time 
+  
+
+thank you
+
+   
+   

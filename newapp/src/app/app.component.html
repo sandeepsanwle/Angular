@@ -1,0 +1,17 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-dark text-center">
+  <h2 routerLink="" style="color: aliceblue;">My App</h2>
+  
+  <a routerLink="about" routerLinkActive="active" ariaCurrentWhenActive="page">about</a>
+  <a routerLink="contact" routerLinkActive="active" ariaCurrentWhenActive="page">contact</a>
+  <a routerLink="users" routerLinkActive="active" ariaCurrentWhenActive="page">users</a>
+  <a routerLink="observable" routerLinkActive="active" ariaCurrentWhenActive="page">status</a>
+  <a routerLink="new" routerLinkActive="active" ariaCurrentWhenActive="page">new</a>
+  
+  
+</nav>
+<!-- <ul>
+  <li *ngFor="let user of users">
+    {{user.name}}
+  </li>
+</ul> -->
+ <router-outlet></router-outlet>

@@ -1,0 +1,33 @@
+
+<div id="searchdiv">
+  <h2>{{header}}</h2>
+  <input type="text" class="form-control" style="width: 200px;"
+   placeholder="search..."  #search (keyup)="getValue(search.value)">
+  <!-- <div class="input-group-append">
+    <button class="btn btn-outline-secondary" (click)="getValue(search.value)" type="button">Button</button>
+  </div> -->
+</div>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">S.No.</th>
+        <th scope="col">FirstName</th>
+        <th scope="col">LastName</th>
+        <th scope="col">email</th>
+        <th scope="col">college</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngIf="errorMessage">{{errorMessage}}</tr>
+      <tr *ngIf="isLoading && !errorMessage">Loading...</tr>
+      <tr *ngFor="let user of filterUsers(),index as a">
+        <th scope="row">{{a+1}}</th>
+        <td>{{user.firstName}}</td>
+        <td>{{user.lastName}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.college}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <app-subusers [item]="usersdata" (updateDataEvent)="updateData($event)"></app-subusers>

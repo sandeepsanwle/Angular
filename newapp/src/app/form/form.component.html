@@ -1,0 +1,76 @@
+<div style="padding: 80px;">
+    
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)">
+    <!-- 2 column grid layout with text inputs for the first and last names -->
+    <div class="row mb-4">
+      
+      <div class="col">
+         
+        <div class="form-outline">
+            <label class="form-label"  for="form3Example1">First name</label>
+          <input type="text" id="form3Example1" formControlName="firstName" class="form-control" 
+          [ngClass]="{'invalid-field': myForm.get('firstName').invalid && myForm.get('firstName').touched}"/> 
+         
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-outline">
+            <label class="form-label" for="form3Example2">Last name</label>
+          <input type="text" id="form3Example2" formControlName="lastName" class="form-control" 
+          [ngClass]="{'invalid-field': myForm.get('lastName').invalid && myForm.get('lastName').touched}"/>
+          
+        </div>
+      </div>
+ 
+    </div>
+  
+    <!-- Email input -->
+    <div class="form-outline mb-4">
+        <label class="form-label" for="form3Example3">Email address</label>
+      <input type="email" id="form3Example3" formControlName="email" class="form-control" 
+      [ngClass]="{'invalid-field': myForm.get('email').invalid && myForm.get('email').touched}"/>
+      
+    </div>
+  
+    <!-- Password input -->
+    <div class="form-outline mb-4">
+        <label class="form-label" for="form3Example4">College</label>
+      <input type="text" id="form3Example4" formControlName="college" class="form-control" 
+      [ngClass]="{'invalid-field': myForm.get('college').invalid && myForm.get('college').touched}"
+      />
+       
+    </div>
+  
+    <!-- Submit button -->
+    <button [disabled]="myForm.invalid" type="submit" class="btn btn-primary mb-4">{{edit ? 'update':'save'}}</button>
+   
+  </form>
+
+  <button (click)="usersData()">updateData</button>
+
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">S.No.</th>
+        <th scope="col">FirstName</th>
+        <th scope="col">LastName</th>
+        <th scope="col">email</th>
+        <th scope="col">college</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngIf="errorMessage">{{errorMessage}}</tr>
+      <tr *ngIf="isLoading && !errorMessage">Loading...</tr>
+      <tr *ngFor="let i of userInfo,index as a">
+        <th scope="row">{{a+1}}</th>
+        <td>{{i.firstName}}</td>
+        <td>{{i.lastName}}</td>
+        <td>{{i.email}}</td>
+        <td>{{i.college}}</td>
+        <td><button class="btn-delete" (click)="onDelete(i.id)">delete</button></td>
+        <td><button class="btn-edit" (click)="onEdit(i.id)">Edit</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
